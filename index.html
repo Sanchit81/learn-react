@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning React</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="root1"></div>
+    <!-- DOM manipulation using JS -->
+    <script>
+      const parent1 = document.createElement("div");
+      parent1.id = "parent1";
+
+      const child = document.createElement("div");
+      child.id = "child";
+
+      const h1a = document.createElement("h1");
+      h1a.textContent = "I'm h1 Tag";
+      const h2a = document.createElement("h2");
+      h2a.textContent = "I'm h2 Tag";
+      child.append(h1a, h2a);
+
+      const child2 = document.createElement("div");
+      child2.id = "child2";
+
+      const h1b = document.createElement("h1");
+      h1b.textContent = "I'm h1 Tag";
+      const h2b = document.createElement("h2");
+      h2b.textContent = "I'm h2 Tag";
+      child2.append(h1b, h2b);
+
+      parent1.append(child, child2);
+      document.getElementById("root1").appendChild(parent1);
+    </script>
+
+    <h3>Root.render() will not affect me</h3>
+    <div id="root2">
+      <h1>Hello everyone!!!</h1>
+      <!-- this will further replaced by parent element while rendering -->
+    </div>
+    <h3>Root.render() will not affect me too</h3>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script src="./App.js"></script>
+  </body>
+</html>
